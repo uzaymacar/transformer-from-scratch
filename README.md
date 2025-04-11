@@ -12,9 +12,9 @@ There are other great repositories out there that implement a transformer from s
 pip install -r requirements.txt
 ```
 
-2. Change the parameters in `main.py` to your liking (more on that below). 
+2. Change the parameters in `main.py` to your liking (more on that below)
 
-3. Run `python main.py` to train the model and observe generated samples from the model.
+3. Run `python main.py` to train the model and observe generated samples from the model
 
 ## Configuration
 
