@@ -104,12 +104,12 @@ class TransformerTrainer:
                 else:
                     progress_bar.set_description(f"Epoch {epoch+1} | Loss: {loss:.3f}")
                 
-                if self.step % self.args.text_sample_frequency == 0:
+                if self.step % self.args.text_sample_frequency == 0 or self.step == 1:
                     text_completions = [self.sampling_function(self.model, prompt) for prompt in self.sample_prompt_list]
                     completions_list.append([epoch, self.step, *text_completions])
                     print("EXAMPLE COMPLETION | ", random.choice(text_completions))
                 
-                if self.step % self.args.table_log_frequency == 0:
+                if self.step % self.args.table_log_frequency == 0 or self.step == 1:
                     wandb.log({
                         "Completions": wandb.Table(
                             data=completions_list, 
