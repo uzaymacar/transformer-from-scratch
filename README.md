@@ -25,7 +25,7 @@ pip install -r requirements.txt
 For example, to train a smaller LLM for Turkish, you can run: 
 
 ```
-python main.py -d uzaymacar/fineweb-turkish-10k -na 4 -ntl 4 -sp "Merhaba,"
+python main.py -ds uzaymacar/fineweb-turkish-10k -na 4 -ntl 4 -sp "Merhaba,"
 ```
 
 ## Configuration
