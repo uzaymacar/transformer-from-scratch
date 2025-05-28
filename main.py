@@ -50,7 +50,7 @@ def parse_args():
     parser.add_argument("-sp", "--sample-prompt", type=str, default="What is the meaning of life?", help="Prompt for sampling")
     parser.add_argument("-t", "--temperature", type=float, default=0.7, help="Sampling temperature")
     parser.add_argument("-tp", "--top-p", type=float, default=0.95, help="Top-p sampling parameter")
-    parser.add_argument("-m", "--max-tokens-generated", type=int, default=32, help="Maximum tokens to generate")
+    parser.add_argument("-m", "--max-tokens-generated", type=int, default=64, help="Maximum tokens to generate")
     
     return parser.parse_args()
 
