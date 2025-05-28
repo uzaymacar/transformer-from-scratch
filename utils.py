@@ -10,7 +10,7 @@ from tokenizer import Tokenizer
 def get_log_probabilites(logits: Float[Tensor, "B T V"], tokens: Int[Tensor, "B T"]) -> Float[Tensor, "B T-1"]:
     """Get the log probabilities of the next token for each token in the sequence."""
     log_probabilities: Float[Tensor, "B T V"] = torch.log_softmax(logits, dim=-1)
-    log_probabilities_for_tokens: Float[Tensor, "B T-1"] = log_probabilities[..., :-1].gather(dim=-1, index=tokens[..., 1:].unsqueeze(-1)).squeeze(-1)
+    log_probabilities_for_tokens: Float[Tensor, "B T-1"] = log_probabilities[:, :-1].gather(dim=-1, index=tokens[:, 1:].unsqueeze(-1)).squeeze(-1)
     return log_probabilities_for_tokens
 
 def keep_single_column(dataset: Dataset, col_name: str):
