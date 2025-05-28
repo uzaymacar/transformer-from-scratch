@@ -99,7 +99,10 @@ class TransformerTrainer:
             for i, batch in enumerate(self.train_loader):
                 loss = self.training_step(batch)
                 progress_bar.update()
-                progress_bar.set_description(f"Epoch {epoch+1} | Loss: {loss:.3f} | Accuracy: {accuracy:.3f}")
+                if accuracy is not np.nan:
+                    progress_bar.set_description(f"Epoch {epoch+1} | Loss: {loss:.3f} | Accuracy: {accuracy:.3f}")
+                else:
+                    progress_bar.set_description(f"Epoch {epoch+1} | Loss: {loss:.3f}")
                 
                 if self.step % self.args.text_sample_frequency == 0:
                     text_completions = [self.sampling_function(self.model, prompt) for prompt in self.sample_prompt_list]
