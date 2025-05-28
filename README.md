@@ -6,15 +6,27 @@ There are other great repositories out there that implement a transformer from s
 
 ## Setup
 
-1. Install the requirements:
+1. Clone this repository:
+
+```bash
+git clone https://github.com/uzaymacar/transformer-from-scratch && cd transformer-from-scratch/
+```
+
+2. Install the requirements:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Change the parameters in `main.py` to your liking (more on that below)
-
 3. Run `python main.py` to train the model and observe generated samples from the model
+
+4. The `main.py` script includes a comprehensive set of command-line arguments for customization with defaults.
+
+For example, to train a smaller LLM for Turkish, you can run: 
+
+```
+python main.py -d uzaymacar/fineweb-turkish-10k -na 4 -ntl 4 -sp "Merhaba,"
+```
 
 ## Configuration
 
